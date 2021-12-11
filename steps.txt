@@ -1,0 +1,17 @@
+npx create-react-app digital-bookshelf --template typescript
+
+cd digital-bookshelf
+
+git init
+git config user.name "User Name"
+git config user.email "user.email@gmail.com"
+git add .
+git commit -m "Initial Commit"
+git branch -M main
+
+npm install axios
+npm install react-router-dom@6
+npm install @mui/material
+npm install @mui/icons-material
+
+npm start
