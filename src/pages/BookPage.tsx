@@ -38,7 +38,7 @@ const BookPage: React.FC<BookPageProps> = (props) => {
             <Container style={{ margin: "2rem" }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={3}>
-                        <img width="80%" src={book.volumeInfo.imageLinks?.thumbnail ?? ""} alt="bookCoverPage" />
+                        <img width="80%" src={book.volumeInfo.imageLinks?.thumbnail ?? "/assets/image_nav.jpg"} alt="bookCoverPage" />
                     </Grid>
                     <Grid item xs={12} sm={9}>
                         <Typography variant="h5">Details: </Typography>
