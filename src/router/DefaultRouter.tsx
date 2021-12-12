@@ -12,7 +12,7 @@ type DefaultRouterProps = {
 
 const DefaultRouter: React.FC<DefaultRouterProps> = (props) => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/" element={<DefaultLayout />}>
                     <Route index element={<HomePage />} />
