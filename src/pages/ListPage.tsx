@@ -15,6 +15,8 @@ const ListPage: React.FC<ListPageProps> = (props) => {
     const query = searchParams.get("query") ?? "";
 
     const count = 24;
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { books, totalBooks, page, setPage } = useSearch(query, count);
 
     if (books === undefined) {
