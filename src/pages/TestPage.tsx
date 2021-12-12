@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Container, Rating } from "@mui/material";
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
@@ -10,7 +11,7 @@ type TestPageProps = {
 };
 
 const TestPage: React.FC<TestPageProps> = (props) => {
-    const books = useSearch("alchemist");
+    const { books, totalBooks, page, setPage } = useSearch("alchemist", 24);
     const book = useBook("FzVjBgAAQBAJ");
 
     if (books === undefined || book === undefined) {

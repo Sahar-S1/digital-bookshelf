@@ -8,15 +8,19 @@ const axiosInstance = axios.create({
     headers: undefined
 });
 
-export const search = async (query: string) => {
+export const search = async (query: string, count: number, page: number = 1) => {
     const res = await axiosInstance.get<{ kind: string; totalItems: number; items: Book[]; }>("volumes", {
         params: {
             q: query,
-            maxResults: 40,
+            maxResults: count,
+            startIndex: (page - 1) * count,
         }
     });
 
-    return res.data.items;
+    return {
+        totalBooks: res.data.totalItems,
+        books: res.data.items
+    };
 }
 
 export const getBook = async (id: string) => {

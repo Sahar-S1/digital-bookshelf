@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Pagination } from "@mui/material";
 
 import BookCard from "../components/BookCard";
 import Loading from "../components/Loading";
@@ -14,7 +14,8 @@ const ListPage: React.FC<ListPageProps> = (props) => {
     const [searchParams] = useSearchParams();
     const query = searchParams.get("query") ?? "";
 
-    const books = useSearch(query);
+    const count = 24;
+    const { books, totalBooks, page, setPage } = useSearch(query, count);
 
     if (books === undefined) {
         return (
@@ -32,6 +33,21 @@ const ListPage: React.FC<ListPageProps> = (props) => {
                         </Grid>
                     ))}
                 </Grid>
+                <Container style={{ padding: "2rem" }}>
+                    <Pagination
+                        color="primary"
+
+                        // Hack to solve Google API Bug
+                        // count={Math.ceil(totalBooks / count)}
+                        count={25}
+
+                        page={page}
+                        onChange={(e, p) => setPage(p)}
+                        showFirstButton
+                        showLastButton
+                        style={{ display: "flex", justifyContent: "center" }}
+                    />
+                </Container>
             </Container>
         );
     }
