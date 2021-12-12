@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 });
 
 export const search = async (query: string) => {
-    const res = await axiosInstance.get<{ items: Book[] }>("volumes", {
+    const res = await axiosInstance.get<{ kind: string; totalItems: number; items: Book[]; }>("volumes", {
         params: {
             q: query,
             maxResults: 40,
