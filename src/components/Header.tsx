@@ -1,5 +1,6 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 
 type HeaderProps = {
 
@@ -10,9 +11,11 @@ const Header: React.FC<HeaderProps> = (props) => {
         <>
             <AppBar position="static" color="primary">
                 <Toolbar>
-                    <Typography color="inherit" variant="h6">
-                        Digital Bookshelfs
-                    </Typography>
+                    <Link to={"/"} style={{ textDecoration: 'none' }}>
+                        <Typography color="white" variant="h6">
+                            Digital Bookshelfs
+                        </Typography>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </>

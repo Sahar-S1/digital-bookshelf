@@ -11,7 +11,8 @@ const axiosInstance = axios.create({
 export const search = async (query: string) => {
     const res = await axiosInstance.get<{ items: Book[] }>("volumes", {
         params: {
-            q: query
+            q: query,
+            maxResults: 40,
         }
     });
 

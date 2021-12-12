@@ -1,7 +1,8 @@
 import React from "react";
-import { LinearProgress, Container, Rating } from "@mui/material";
+import { Container, Rating } from "@mui/material";
 import SearchSharpIcon from '@mui/icons-material/SearchSharp';
 
+import Loading from "../components/Loading";
 import { useBook, useSearch } from "../utils/hooks";
 
 type TestPageProps = {
@@ -14,7 +15,7 @@ const TestPage: React.FC<TestPageProps> = (props) => {
 
     if (books === undefined || book === undefined) {
         return (
-            <LinearProgress />
+            <Loading />
         )
     } else {
         return (
