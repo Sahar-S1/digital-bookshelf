@@ -39,34 +39,35 @@ const BookPage: React.FC<BookPageProps> = (props) => {
                         <img width="80%" src={book.volumeInfo.imageLinks.thumbnail ?? ""} alt="bookCoverPage" />
                     </Grid>
                     <Grid item xs={12} sm={9}>
-                        <Typography variant="h5">Description: </Typography>
-                        <Container>
-                            <div dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }} />
+                        <Typography variant="h5">Details: </Typography>
+                        <Container style={{ textAlign: "justify", wordWrap: "break-word" }}>
+                            <table>
+                                {Object.entries(data).map(([key, val]) =>
+                                    (key === "Ratings") ?
+                                        (
+                                            <tr>
+                                                <td>{key}: </td>
+                                                <td>
+                                                    <Rating value={parseFloat(val.split(";")[0])} precision={0.5} readOnly />
+                                                    {`(${val.split(";")[1]})`}
+                                                </td>
+                                            </tr>
+                                        ) :
+                                        (
+                                            <tr>
+                                                <td>{key}: </td>
+                                                <td>{val}</td>
+                                            </tr>
+                                        )
+                                )}
+                            </table>
                         </Container>
                     </Grid>
                     <Grid item xs={12} sm={12}>
-                        <Typography variant="h5">Details: </Typography>
-                        <br />
-                        <table>
-                            {Object.entries(data).map(([key, val]) =>
-                                (key === "Ratings") ?
-                                    (
-                                        <tr>
-                                            <td>{key}: </td>
-                                            <td>
-                                                <Rating value={parseFloat(val.split(";")[0])} precision={0.5} readOnly />
-                                                {`(${val.split(";")[1]})`}
-                                            </td>
-                                        </tr>
-                                    ) :
-                                    (
-                                        <tr>
-                                            <td>{key}: </td>
-                                            <td>{val}</td>
-                                        </tr>
-                                    )
-                            )}
-                        </table>
+                        <Typography variant="h5">Description: </Typography>
+                        <Container style={{ textAlign: "justify", wordWrap: "break-word" }}>
+                            <div style={{ marginRight: "2rem" }} dangerouslySetInnerHTML={{ __html: book.volumeInfo.description }} />
+                        </Container>
                     </Grid>
                 </Grid>
             </Container>
