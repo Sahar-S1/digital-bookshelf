@@ -12,7 +12,7 @@ const HomePage: React.FC<HomePageProps> = (props) => {
         <>
             <Container>
                 <Typography variant="h2" margin={10} color="primary" textAlign="center">
-                    Digital Bookshelf
+                    Open Books DataBase
                 </Typography>
             </Container>
             <Container style={{ margin: "2rem auto", width: "80%" }}>

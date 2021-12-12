@@ -1,6 +1,6 @@
-npx create-react-app digital-bookshelf --template typescript
+npx create-react-app obdb --template typescript
 
-cd digital-bookshelf
+cd obdb
 
 git init
 git config user.name "User Name"

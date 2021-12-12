@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                 <Toolbar>
                     <Link to={"/"} style={{ textDecoration: 'none' }}>
                         <Typography color="white" variant="h6">
-                            Digital Bookshelfs
+                            OBDB
                         </Typography>
                     </Link>
                 </Toolbar>
