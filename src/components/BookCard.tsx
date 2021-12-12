@@ -9,7 +9,7 @@ type BookCardProps = {
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
     return (
-        <Card>
+        <Card style={{ height: "100%" }}>
             <CardMedia
                 component="img"
                 image={book.volumeInfo.imageLinks?.thumbnail ?? "/assets/image_nav.jpg"}
