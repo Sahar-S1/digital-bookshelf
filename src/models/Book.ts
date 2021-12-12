@@ -3,7 +3,7 @@ export type Book = {
     id: string;
     etag: string;
     selfLink: string;
-    volumeInfo: {
+    volumeInfo: Partial<{
         title: string;
         subtitle: string;
         authors: string[];
@@ -30,29 +30,29 @@ export type Book = {
             containsEpubBubbles: boolean;
             containsImageBubbles: boolean;
         },
-        imageLinks: {
+        imageLinks: Partial<{
             smallThumbnail: string;
             thumbnail: string;
-        },
+        }>,
         language: string;
         previewLink: string;
         infoLink: string;
         canonicalVolumeLink: string;
-    },
-    saleInfo: {
+    }>,
+    saleInfo: Partial<{
         country: string;
         saleability: string;
         isEbook: boolean;
-        listPrice?: {
+        listPrice: {
             amount: number;
             currencyCode: string;
         };
-        retailPrice?: {
+        retailPrice: {
             amount: 75;
             currencyCode: string;
         };
-        buyLink?: string;
-        offers?: {
+        buyLink: string;
+        offers: {
             finskyOfferType: number;
             listPrice: {
                 amountInMicros: number;
@@ -63,8 +63,8 @@ export type Book = {
                 currencyCode: string;
             };
         }[];
-    },
-    accessInfo: {
+    }>,
+    accessInfo: Partial<{
         country: string;
         viewability: string;
         embeddable: boolean;
@@ -81,8 +81,8 @@ export type Book = {
         webReaderLink: string;
         accessViewStatus: string;
         quoteSharingAllowed: boolean;
-    },
-    searchInfo: {
+    }>,
+    searchInfo: Partial<{
         textSnippet: string;
-    }
+    }>
 };
