@@ -1,7 +1,7 @@
 {
   "name": "obdb",
   "version": "0.1.0",
-  "homepage": "https://sahar-s1.github.io/obdb",
+  "homepage": "https://sahar-s1.github.io/obdb/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",

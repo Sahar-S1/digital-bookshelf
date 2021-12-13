@@ -1,5 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Container, Grid, Rating, Typography } from "@mui/material";
 
 import Loading from "../components/Loading";
@@ -10,7 +10,9 @@ type BookPageProps = {
 };
 
 const BookPage: React.FC<BookPageProps> = (props) => {
-    const [searchParams] = useSearchParams();
+    // const [searchParams] = useSearchParams();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search.substring(1));
     const id = searchParams.get("id") ?? "";
 
     const book = useBook(id);

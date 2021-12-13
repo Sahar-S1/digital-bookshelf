@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 import DefaultLayout from "../layouts/DefaultLayout";
 import HomePage from '../pages/HomePage';
@@ -12,7 +12,8 @@ type DefaultRouterProps = {
 
 const DefaultRouter: React.FC<DefaultRouterProps> = (props) => {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        // <BrowserRouter basename={process.env.NODE_ENV === "development" ? undefined : process.env.PUBLIC_URL}>
+        <HashRouter>
             <Routes>
                 <Route path="/" element={<DefaultLayout />}>
                     <Route index element={<HomePage />} />
@@ -20,7 +21,7 @@ const DefaultRouter: React.FC<DefaultRouterProps> = (props) => {
                     <Route path="book" element={<BookPage />} />
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 

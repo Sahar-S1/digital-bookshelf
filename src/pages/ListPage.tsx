@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Container, Grid, Pagination } from "@mui/material";
 
 import BookCard from "../components/BookCard";
@@ -11,7 +11,9 @@ type ListPageProps = {
 };
 
 const ListPage: React.FC<ListPageProps> = (props) => {
-    const [searchParams] = useSearchParams();
+    // const [searchParams] = useSearchParams();
+    const location = useLocation();
+    const searchParams = new URLSearchParams(location.search.substring(1));
     const query = searchParams.get("query") ?? "";
 
     const count = 24;
@@ -29,7 +31,7 @@ const ListPage: React.FC<ListPageProps> = (props) => {
                 <Grid container spacing={{ xs: 2, md: 3 }} alignItems="stretch">
                     {books.map(book => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={book.id}>
-                            <Link to={`/book?id=${book.id}`} style={{ textDecoration: 'none' }}>
+                            <Link to={{ pathname: "book", search: `id=${book.id}` }} style={{ textDecoration: 'none' }}>
                                 <BookCard book={book} />
                             </Link>
                         </Grid>
