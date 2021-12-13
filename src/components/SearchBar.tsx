@@ -16,7 +16,7 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
             component="form"
             onSubmit={(e: any) => {
                 (e as Event).preventDefault();
-                navigate({ pathname: "search", search: `query=${query}` });
+                navigate({ pathname: "/search", search: `query=${query}` });
             }}
             sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: "100%" }}
         >

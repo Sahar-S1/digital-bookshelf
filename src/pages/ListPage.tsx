@@ -31,7 +31,7 @@ const ListPage: React.FC<ListPageProps> = (props) => {
                 <Grid container spacing={{ xs: 2, md: 3 }} alignItems="stretch">
                     {books.map(book => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={book.id}>
-                            <Link to={{ pathname: "book", search: `id=${book.id}` }} style={{ textDecoration: 'none' }}>
+                            <Link to={{ pathname: "/book", search: `id=${book.id}` }} style={{ textDecoration: 'none' }}>
                                 <BookCard book={book} />
                             </Link>
                         </Grid>
