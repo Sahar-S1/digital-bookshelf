@@ -12,7 +12,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
         <Card style={{ height: "100%" }}>
             <CardMedia
                 component="img"
-                image={book.volumeInfo.imageLinks?.thumbnail ?? "/assets/image_nav.jpg"}
+                image={book.volumeInfo.imageLinks?.thumbnail ?? "assets/image_nav.jpg"}
             />
             <CardContent>
                 <Typography gutterBottom variant="h6" color="secondary">{book.volumeInfo.title}</Typography>
