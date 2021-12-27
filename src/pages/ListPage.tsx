@@ -27,7 +27,7 @@ const ListPage: React.FC<ListPageProps> = (props) => {
         )
     } else {
         return (
-            <Container style={{ margin: "0 2rem" }}>
+            <Container style={{ margin: "2rem 2rem 0 2rem" }}>
                 <Grid container spacing={{ xs: 2, md: 3 }} alignItems="stretch">
                     {books.map(book => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={book.id}>
