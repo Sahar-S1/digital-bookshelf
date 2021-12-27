@@ -7,7 +7,7 @@ type FooterProps = {
 
 const Footer: React.FC<FooterProps> = (props) => {
     return (
-        <AppBar position="static" color="primary">
+        <AppBar position="static" color="primary" style={{ position: "absolute", bottom: 0 }}>
             <Toolbar>
                 <Typography variant="body1" color="white">
                     © 2021 Vidyalankar Polytechnic
